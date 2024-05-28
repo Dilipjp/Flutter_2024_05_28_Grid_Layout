@@ -28,7 +28,7 @@ class MyHomePage extends StatelessWidget {
         title: Text('Grid layout'),
       ),
       body: Center(
-        child: showGrid ? _buildGrid() : _buildList(),
+        child: showGrid ? _buildGrid() : _buildStack(),
       ),
     );
   }
@@ -47,6 +47,31 @@ class MyHomePage extends StatelessWidget {
     return ListView(
       padding: EdgeInsets.all(4),
       children: _buildListView(10),
+    );
+  }
+
+  Widget _buildStack() {
+    return Stack(
+     alignment: Alignment(0.6,0.6),
+      children: [
+        CircleAvatar(
+          backgroundImage: AssetImage('assets/pic0.jpg'),
+          radius: 100,
+        ),
+        Container(
+          decoration: BoxDecoration(
+            color: Colors.black45
+          ),
+          child: Text(
+            'Dilip',
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: Colors.white
+            ),
+          ),
+        )
+      ],
     );
   }
 
